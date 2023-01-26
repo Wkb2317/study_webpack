@@ -5,7 +5,7 @@ module.exports = {
   // 输出配置
   output: {
     path: path.resolve(__dirname, 'dist'), // 绝对路径
-    filename: 'static/js/main.js', // 输出文件名
+    filename: 'js/main.js', // 输出文件名
     clean: true, // 自动清空打包路径
   },
   // loader
@@ -49,7 +49,14 @@ module.exports = {
         },
         generator: {
           // 输出文件名称
-          filename: 'static/img/[hash:10][ext][query]',
+          filename: 'img/[hash:10][ext][query]',
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|mp3|mp4)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[hash:10][ext][query]',
         },
       },
     ],

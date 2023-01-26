@@ -1,0 +1,30 @@
+{
+  "id": "3869805",
+  "name": "webpack",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "26313723",
+      "name": "招聘求职",
+      "font_class": "zhaopinqiuzhi",
+      "unicode": "ffb6",
+      "unicode_decimal": 65462
+    },
+    {
+      "icon_id": "26313724",
+      "name": "二手交易",
+      "font_class": "ershoujiaoyi",
+      "unicode": "ffb7",
+      "unicode_decimal": 65463
+    },
+    {
+      "icon_id": "26313727",
+      "name": "商铺出租",
+      "font_class": "shangpuchuzu",
+      "unicode": "ffb8",
+      "unicode_decimal": 65464
+    }
+  ]
+}
