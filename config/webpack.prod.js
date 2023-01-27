@@ -2,6 +2,11 @@ const path = require('path')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+
+function getStyleLoader(preset) {
+  return [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', preset].filter(Boolean)
+}
 
 module.exports = {
   entry: path.resolve(__dirname, '../src/main.js'), // 入口文件
@@ -17,38 +22,19 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: getStyleLoader(),
       },
       {
         test: /\.less$/i,
-        use: [
-          // compiles Less to CSS
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'less-loader',
-        ],
+        use: getStyleLoader('less-loader'),
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // 将 JS 字符串生成为 style 节点
-          MiniCssExtractPlugin.loader,
-          // 将 CSS 转化成 CommonJS 模块
-          'css-loader',
-          'postcss-loader',
-          // 将 Sass 编译成 CSS
-          'sass-loader',
-        ],
+        use: getStyleLoader('sass-loader'),
       },
       {
         test: /\.styl$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'stylus-loader',
-        ],
+        use: getStyleLoader('stylus-loader'),
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -93,6 +79,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/main.css',
     }),
+    new CssMinimizerPlugin(),
   ],
   mode: 'production', // 模式
+  devtool: 'source-map',
 }

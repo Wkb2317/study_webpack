@@ -1,6 +1,11 @@
 const path = require('path')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+function getStyleLoader(preset) {
+  return [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', preset].filter(Boolean)
+}
 
 module.exports = {
   entry: './src/main.js', // 入口文件
@@ -22,31 +27,19 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: getStyleLoader(),
       },
       {
         test: /\.less$/i,
-        use: [
-          // compiles Less to CSS
-          'style-loader',
-          'css-loader',
-          'less-loader',
-        ],
+        use: getStyleLoader('less-loader'),
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // 将 JS 字符串生成为 style 节点
-          'style-loader',
-          // 将 CSS 转化成 CommonJS 模块
-          'css-loader',
-          // 将 Sass 编译成 CSS
-          'sass-loader',
-        ],
+        use: getStyleLoader('sass-loader'),
       },
       {
         test: /\.styl$/,
-        use: ['style-loader', 'css-loader', 'stylus-loader'],
+        use: getStyleLoader('stylus-loader'),
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -88,6 +81,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
     }),
+    new MiniCssExtractPlugin({
+      filename: 'css/main.css',
+    }),
   ],
   mode: 'development', // 模式
+  devtool: 'cheap-source-map',
 }
