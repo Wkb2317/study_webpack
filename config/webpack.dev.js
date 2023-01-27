@@ -1,13 +1,21 @@
 const path = require('path')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js', // 入口文件
   // 输出配置
   output: {
-    path: path.resolve(__dirname, 'dist'), // 绝对路径
+    path: undefined,
+    // path: path.resolve(__dirname, '../dist'), // 绝对路径
     filename: 'js/main.js', // 输出文件名
-    clean: true, // 自动清空打包路径
+    // clean: true, // 自动清空打包路径
+  },
+  devServer: {
+    static: './dist',
+    port: 3000,
+    open: true,
+    hot: true,
   },
   // loader
   module: {
@@ -76,6 +84,9 @@ module.exports = {
   plugins: [
     new ESLintPlugin({
       context: path.resolve(__dirname, 'src'),
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '../public/index.html'),
     }),
   ],
   mode: 'development', // 模式

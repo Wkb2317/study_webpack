@@ -1,7 +1,16 @@
 .box {
   width: 100px;
   height: 100px;
+  display: flex;
   background-image: url('../static/img/1.jpg');
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 
 /* @import '../static/font/iconfont.css'; */
