@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // 入口文件
 import count from './js/count'
 import sum from './js/sum'
