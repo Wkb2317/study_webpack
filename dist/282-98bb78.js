@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_code=self.webpackChunkwebpack_code||[]).push([[282],{282:function(e,c,n){function u(e){return 2*e}n.d(c,{Z:function(){return u}})}}]);

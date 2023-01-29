@@ -9,6 +9,7 @@
     "dev": "webpack serve --config ./config/webpack.dev.js",
     "build": "webpack --config ./config/webpack.prod.js",
     "split": "webpack --config ./config/code_split.js",
+    "chunk": "webpack --config ./config/split_chunk.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
