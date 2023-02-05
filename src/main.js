@@ -4,13 +4,13 @@ import count from './js/count'
 import sum from './js/sum'
 import { add } from './js/math'
 // css
-// import './css/index.css'
+import './css/index.css'
 // less
-// import './css/main.less'
+import './css/main.less'
 // scss
-// import './css/app.scss'
+import './css/app.scss'
 // stylus
-// import './css/test.styl'
+import './css/test.styl'
 
 // font
 import './static/font/iconfont.js'

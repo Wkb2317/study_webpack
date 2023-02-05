@@ -21,7 +21,8 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'), // 绝对路径
     filename: 'js/[name].js', // 输出文件名
     clean: true, // 自动清空打包路径
-    chunkFileName: 'js/[name].chunk.js',
+    chunkFilename: 'js/[name].chunk.js',
+    assetModuleFilename: 'media/[hash][ext][query]',
   },
 
   // loader
@@ -52,17 +53,17 @@ module.exports = {
               maxSize: 10 * 1024, // 图片转base64
             },
           },
-          generator: {
-            // 输出文件名称
-            filename: 'img/[hash:10][ext][query]',
-          },
+          // generator: {
+          //   // 输出文件名称
+          //   filename: 'img/[hash:10][ext][query]',
+          // },
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf|mp3|mp4)$/i,
           type: 'asset/resource',
-          generator: {
-            filename: 'fonts/[hash:10][ext][query]',
-          },
+          // generator: {
+          //   filename: 'fonts/[hash:10][ext][query]',
+          // },
         },
         {
           test: /\.m?js$/,
