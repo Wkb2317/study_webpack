@@ -10,6 +10,7 @@
     "build": "webpack --config ./config/webpack.prod.js",
     "split": "webpack --config ./config/code_split.js",
     "chunk": "webpack --config ./config/split_chunk.js",
+    "sign": "webpack --config ./config/sign_entry.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

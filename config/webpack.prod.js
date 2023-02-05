@@ -19,8 +19,9 @@ module.exports = {
   // 输出配置
   output: {
     path: path.resolve(__dirname, '../dist'), // 绝对路径
-    filename: 'js/main.js', // 输出文件名
+    filename: 'js/[name].js', // 输出文件名
     clean: true, // 自动清空打包路径
+    chunkFileName: 'js/[name].chunk.js',
   },
 
   // loader
@@ -102,7 +103,8 @@ module.exports = {
       template: path.resolve(__dirname, '../public/index.html'), // 模板路径
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/main.css', //  CSS 提取到单独的文件
+      filename: 'css/[name].css', //  CSS 提取到单独的文件
+      chunkFilename: 'css/[name].chunk.css',
     }),
     new CssMinimizerPlugin(), // 压缩css
     new TerserPlugin({

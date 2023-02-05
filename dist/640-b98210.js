@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebpack_code=self.webpackChunkwebpack_code||[]).push([[640],{640:function(e,c,o){var n=o(282);console.log((0,n.Z)(1)),document.querySelector(".double").addEventListener("click",(()=>{o.e(318).then(o.bind(o,318)).then((e=>{console.log(e.default(20))})).catch((()=>{console.log("模块加载失败")}))}))}}]);

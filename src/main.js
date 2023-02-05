@@ -2,7 +2,7 @@
 // 入口文件
 import count from './js/count'
 import sum from './js/sum'
-
+import { add } from './js/math'
 // css
 // import './css/index.css'
 // less
