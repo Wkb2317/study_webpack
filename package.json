@@ -49,6 +49,7 @@
     "not dead"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.20.13"
+    "@babel/runtime": "^7.20.13",
+    "@vue/preload-webpack-plugin": "^2.0.0"
   }
 }
