@@ -99,34 +99,6 @@ module.exports = {
   ],
   optimization: {
     minimizer: [// 压缩图片
-      // 没用，增加打包时间，依赖还下载不下来
-      // new ImageMinimizerPlugin({
-      //   minimizer: {
-      //     implementation: ImageMinimizerPlugin.imageminGenerate,
-      //     options: {
-      //       plugins: [
-      //         ['gifsicle', { interlaced: true }],
-      //         ['jpegtran', { progressive: true }],
-      //         ['optipng', { optimizationLevel: 5 }],
-      //         [
-      //           'svgo',
-      //           {
-      //             plugins: [
-      //               'preset-default',
-      //               'prefixIds',
-      //               {
-      //                 name: 'sortAttrs',
-      //                 params: {
-      //                   xmlnsOrder: 'alphabetical',
-      //                 },
-      //               },
-      //             ],
-      //           },
-      //         ],
-      //       ],
-      //     },
-      //   },
-      // }),
     ],
     runtimeChunk: {
       name: entryPoint => `runtime~${entryPoint.name}`,

@@ -50,6 +50,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "@vue/preload-webpack-plugin": "^2.0.0"
+    "@vue/preload-webpack-plugin": "^2.0.0",
+    "core-js": "^3.27.2"
   }
 }

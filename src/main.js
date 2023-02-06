@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// import 'core-js'
 // 入口文件
 import count from './js/count'
 import sum from './js/sum'
@@ -27,3 +28,6 @@ if (module.hot) {
   module.hot.accept('./js/sum.js')
 }
 // 那开发过程中有很多js文件都要手动添加吗? 不，像vue-loader和react-loader已经帮我们实现了
+const pro = new Promise((resolve, reject) => {
+  resolve(1)
+})
