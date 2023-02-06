@@ -20,9 +20,9 @@ module.exports = {
   // 输出配置
   output: {
     path: path.resolve(__dirname, '../dist'), // 绝对路径
-    filename: 'js/[name].js', // 输出文件名
+    filename: 'js/[name].[contenthash].js', // 输出文件名
     clean: true, // 自动清空打包路径
-    chunkFilename: 'js/[name].chunk.js',
+    chunkFilename: 'js/[name].[contenthash].chunk.js',
     assetModuleFilename: 'media/[hash][ext][query]',
   },
 
@@ -128,6 +128,9 @@ module.exports = {
       //   },
       // }),
     ],
+    runtimeChunk: {
+      name: entryPoint => `runtime~${entryPoint.name}`,
+    },
   },
   mode: 'production', // 生产模式
   devtool: 'source-map',

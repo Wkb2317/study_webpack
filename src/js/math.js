@@ -10,6 +10,12 @@ export function add(a, b) {
   return a + b
 }
 
+function test() {
+  return true
+}
+
+test()
+
 console.log(count(1))
 
 const button = document.querySelector('.double')

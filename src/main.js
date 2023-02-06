@@ -18,6 +18,8 @@ import './static/font/iconfont.js'
 console.log(count(2))
 console.log(sum(2, 3, 4, 1))
 
+add(1, 2)
+
 // 模块热替换对css有用，对js没用
 // 我们需要手动的添加模块热替换js文件
 if (module.hot) {

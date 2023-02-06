@@ -1,1 +1,0 @@
-{"version":3,"file":"js/math.chunk.js","mappings":"gHAAe,SAASA,EAAOC,GAC7B,OAAgB,EAATA,CACT,C","sources":["webpack://webpack_code/./src/js/double.js"],"sourcesContent":["export default function double(number) {\r\n  return number * 2\r\n}\r\n"],"names":["double","number"],"sourceRoot":""}
